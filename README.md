@@ -19,3 +19,4 @@ Add From Date and To Date (date range) to Tier Pricing Magento 2
 
 - Check on admin -> Catalog->Products->[Edit Product]->Advacned Pricing->Add tier prices
 
+### PS: This is not thoroughly tested, only few basic scenarios, if you happen to find any issues pls do keep posted or make a PR
