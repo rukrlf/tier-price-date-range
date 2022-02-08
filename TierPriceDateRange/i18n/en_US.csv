@@ -1,0 +1,4 @@
+"Tier prices data should be array, but actually other type is received","Tier prices data should be array, but actually other type is received"
+"Make sure the Tier Price To Date is later than or the same as the Tier Price From Date on row %row","Make sure the Tier Price To Date is later than or the same as the Tier Price From Date on row %row"
+From,From
+To,To

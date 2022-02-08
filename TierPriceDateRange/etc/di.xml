@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category Rukshan
+ * @package  Rukshan_TierPriceDateRange
+ * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *
+ *
+ * @author   Rukshan
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\EntityManager\Operation\ExtensionPool">
+        <arguments>
+            <argument name="extensionActions" xsi:type="array">
+                <item name="Magento\Catalog\Api\Data\ProductInterface" xsi:type="array">
+                    <item name="create" xsi:type="array">
+                        <item name="tierPriceCreator" xsi:type="string">Rukshan\TierPriceDateRange\Model\Product\Attribute\Backend\TierPrice\SaveHandler</item>
+                    </item>
+                    <item name="update" xsi:type="array">
+                        <item name="tierPriceUpdater" xsi:type="string">Rukshan\TierPriceDateRange\Model\Product\Attribute\Backend\TierPrice\UpdateHandler</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Attribute\Backend\Tierprice">
+        <plugin name="Rukshan_TierPriceDateRange_Tierprice_Model_After_Plugin" type="Rukshan\TierPriceDateRange\Plugin\Model\Product\Attribute\Backend\Tierprice" sortOrder="1"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Attribute\Backend\Tierprice">
+        <arguments>
+            <argument name="productAttributeTierprice" xsi:type="object">Rukshan\TierPriceDateRange\Model\ResourceModel\Product\Attribute\Backend\Tierprice</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\Query\BaseFinalPrice">
+        <plugin name="Rukshan_TierPriceDateRange_Indexer_PriceQuery_BaseFinalPrice_After_Plugin"
+                type="Rukshan\TierPriceDateRange\Plugin\Model\ResourceModel\Product\Indexer\Price\Query\BaseFinalPriceAfter" sortOrder="1"/>
+    </type>
+</config>
