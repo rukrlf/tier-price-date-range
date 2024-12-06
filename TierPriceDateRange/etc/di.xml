@@ -36,4 +36,5 @@
         <plugin name="Rukshan_TierPriceDateRange_Indexer_PriceQuery_BaseFinalPrice_After_Plugin"
                 type="Rukshan\TierPriceDateRange\Plugin\Model\ResourceModel\Product\Indexer\Price\Query\BaseFinalPriceAfter" sortOrder="1"/>
     </type>
+    <preference for="Magento\Catalog\Model\Product\Type\Price" type="Rukshan\TierPriceDateRange\Model\Product\Type\Price" />
 </config>
